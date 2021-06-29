@@ -203,7 +203,33 @@ class _ItemsState extends State<Items> {
                 ),
               ),
               GridView.count(
-                crossAxisSpacing: ,
+                shrinkWrap: true,
+                physics: NeverScrollableScrollPhysics(),
+                crossAxisSpacing: 5.0,
+                mainAxisSpacing: 5.0,
+                crossAxisCount: 2,
+                children: List.generate(images.length, (index) {
+                  return Container(
+                    margin: EdgeInsets.only(left: 10.0),
+                    height: 60,
+                    width: 80,
+                    child: Align(
+                      alignment: Alignment.topCenter,
+                      child: Column(
+                        children: [
+                          ClipRRect(
+                              borderRadius: BorderRadius.circular(30.0),
+                              child: FittedBox(
+                                  child: new Image.asset(images[index][0]))),
+                          SizedBox(
+                            child: Text(images[index][1]),
+                          )
+                        ],
+                      ),
+                    ),
+                    color: Colors.amber,
+                  );
+                }),
               ),
             ],
           ),
