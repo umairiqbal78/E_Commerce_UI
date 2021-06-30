@@ -2,9 +2,29 @@ import 'package:flutter/material.dart';
 import 'items.dart';
 
 void main() => runApp(MaterialApp(
-      home: Scaffold(body: SingleChildScrollView(child: Column(
-        children: [
-          Items(),
-        ],
-      ))),
+      home: Scaffold(
+          appBar: AppBar(
+            backgroundColor: Colors.white,
+            title: Text(
+              "Ecom App UI",
+              style:
+                  TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
+            ),
+            centerTitle: true,
+            actions: <Widget>[
+              IconButton(
+                icon: Icon(
+                  Icons.notifications,
+                  color: Colors.black,
+                ),
+                onPressed: () {},
+              )
+            ],
+          ),
+          body: SingleChildScrollView(
+              child: Column(
+            children: [
+              Items(),
+            ],
+          ))),
     ));
