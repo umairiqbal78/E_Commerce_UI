@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:rating_bar/rating_bar.dart';
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:persistent_bottom_nav_bar/persistent-tab-view.dart';
+import 'providedstyle.dart';
 
 class Items extends StatefulWidget {
   @override
@@ -317,29 +319,28 @@ class _ItemsState extends State<Items> {
             ],
           ),
         ),
-        BottomNavigationBar(
-          items: const <BottomNavigationBarItem>[
-            BottomNavigationBarItem(
-              icon: Icon(Icons.home),
-              label: 'Home',
-              backgroundColor: Colors.red,
+        Center(
+          child: ElevatedButton(
+            child: Text("Custom widget example"),
+            onPressed: () => pushNewScreen(
+              context,
+              screen: CustomWidgetExample(
+                menuScreenContext: context,
+              ),
             ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.business),
-              label: 'Business',
-              backgroundColor: Colors.green,
+          ),
+        ),
+        SizedBox(height: 20.0),
+        Center(
+          child: ElevatedButton(
+            child: Text("Built-in styles example"),
+            onPressed: () => pushNewScreen(
+              context,
+              screen: ProvidedStylesExample(
+                menuScreenContext: context,
+              ),
             ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.school),
-              label: 'School',
-              backgroundColor: Colors.purple,
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.settings),
-              label: 'Settings',
-              backgroundColor: Colors.pink,
-            ),
-          ],
+          ),
         ),
       ],
     );
