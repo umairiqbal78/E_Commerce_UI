@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+
 import 'items.dart';
+import 'providedstyle.dart';
 
 void main() => runApp(MaterialApp(
       home: Scaffold(
@@ -25,6 +27,7 @@ void main() => runApp(MaterialApp(
               child: Column(
             children: [
               Items(),
+              MyApp(),
             ],
           ))),
     ));
