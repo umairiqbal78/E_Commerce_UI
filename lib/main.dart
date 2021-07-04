@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 import 'items.dart';
-import 'providedstyle.dart';
 
 void main() => runApp(MaterialApp(
       home: Scaffold(
@@ -27,7 +26,89 @@ void main() => runApp(MaterialApp(
               child: Column(
             children: [
               Items(),
-              MyApp(),
             ],
-          ))),
+          )),
+          floatingActionButton: FloatingActionButton(
+            backgroundColor: Colors.purple,
+            child: Icon(
+              Icons.search,
+              color: Colors.white,
+            ),
+            onPressed: () {},
+          ),
+          floatingActionButtonLocation:
+              FloatingActionButtonLocation.centerDocked,
+          bottomNavigationBar: BottomAppBar(
+              shape: CircularNotchedRectangle(),
+              notchMargin: 5,
+              child: Container(
+                height: 60,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Row(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        MaterialButton(
+                            onPressed: () {},
+                            minWidth: 60,
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Icon(
+                                  Icons.home,
+                                  color: Colors.purple,
+                                  size: 30.0,
+                                ),
+                              ],
+                            )),
+                        MaterialButton(
+                            onPressed: () {},
+                            minWidth: 60,
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Icon(
+                                  Icons.favorite,
+                                  color: Colors.grey,
+                                  size: 30.0,
+                                ),
+                              ],
+                            )),
+                      ],
+                    ),
+                    Row(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        MaterialButton(
+                            onPressed: () {},
+                            minWidth: 60,
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Icon(
+                                  Icons.add_shopping_cart,
+                                  color: Colors.grey,
+                                  size: 30.0,
+                                ),
+                              ],
+                            )),
+                        MaterialButton(
+                            onPressed: () {},
+                            minWidth: 60,
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Icon(
+                                  Icons.person,
+                                  color: Colors.grey,
+                                  size: 30.0,
+                                ),
+                              ],
+                            )),
+                      ],
+                    )
+                  ],
+                ),
+              ))),
     ));
